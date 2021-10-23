@@ -1,0 +1,106 @@
+<!--Form Handling-->
+<form action="/api/users" method="POST" id="add_user">
+    <div class="new_user">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="hidden" name="id" value="">
+            <input type="text" name="name" value="" placeholder="Full name as per IC">
+        </div>
+        <div class="form-group">
+            <label for="ic_number">IC Number</label>
+            <input type="hidden" name="id" value="" required>
+            <input type="text" name="ic_number" value="" placeholder="IC Number">
+        </div>
+        <div class="form-group">
+            <label for="ic_colour">IC Colour</label>
+            <div class="radio inline">
+                <input type="radio" id="radio-2" name="ic_colour" value="Yellow">
+                <label for="radio-2" class="radio-label">Yellow</label>
+            </div>
+            <div class="radio inline">
+                <input type="radio" id="radio-3" name="ic_colour" value="Red">
+                <label for="radio-3" class="radio-label">Red</label>
+            </div>
+            <div class="radio inline">
+                <input type="radio" id="radio-4" name="ic_colour" value="Green">
+                <label for="radio-4" class="radio-label">Green</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="gender">Gender</label>
+            <div class="radio inline">
+                <input type="radio" id="radio-5" name="gender" value="Male">
+                <label for="radio-5" class="radio-label">Male</label>
+            </div>
+            <div class="radio inline">
+                <input type="radio" id="radio-6" name="gender" value="Female">
+                <label for="radio-6" class="radio-label">Female</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="nationality">Nationality</label>
+            <input type="hidden" name="id" value="" required>
+            <input type="text" name="nationality" value="" placeholder="Nationality">
+        </div>
+        <div class="form-group">
+            <p>Date of Birth</p>
+            <input type="hidden" name="id" value="">
+            <input type="date" name="date_of_birth" value="" placeholder="Date of Birth" required>
+        </div>
+        <div class="form-group">
+            <label for="grade">Grade</label>
+            <input type="hidden" name="id" value="">
+            <input type="text" name="grade" value="" placeholder="Grade">
+        </div>
+        <div class="form-group">
+            <label for="educational_institution">Educational Institution</label>
+            <input type="hidden" name="id" value="">
+            <input type="text" name="educational_institution" value="" placeholder="Educational Institution">
+        </div>
+        <div class="form-group">
+            <p>Are you enjoy online education</p>
+            <label for="question_1" class="text-light"></label>
+            <div class="radio inline">
+                <input type="radio" id="radio-7" name="question_1" value="1">
+                <label for="radio-7" class="radio-label">1</label>
+            </div>
+            <div class="radio inline">
+                <input type="radio" id="radio-8" name="question_1" value="2">
+                <label for="radio-8" class="radio-label">2</label>
+            </div>
+            <div class="radio inline">
+                <input type="radio" id="radio-9" name="question_1" value="3">
+                <label for="radio-9" class="radio-label">3</label>
+            </div>
+            <div class="radio inline">
+                <input type="radio" id="radio-10" name="question_1" value="4">
+                <label for="radio-10" class="radio-label">4</label>
+            </div>
+            <div class="radio inline">
+                <input type="radio" id="radio-11" name="question_1" value="5">
+                <label for="radio-11" class="radio-label">5</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <p>Do you want to go back to in-person class</p>
+            <label for="question_2" class="text-light"></label>
+            <div class="radio inline">
+                <input type="radio" id="radio-12" name="question_2" value="Yes">
+                <label for="radio-12" class="radio-label">Yes</label>
+            </div>
+            <div class="radio inline">
+                <input type="radio" id="radio-13" name="question_2" value="No">
+                <label for="radio-13" class="radio-label">No</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="question_3">What is the hardest part of online learning</label>
+            <input type="hidden" name="id" value="">
+            <input type="text" name="question_3" value="" placeholder="What is the hardest part of online learning">
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn text-dark update">Save</button>
+        </div>
+    </div>
+</form>
