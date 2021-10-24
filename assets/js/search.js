@@ -1,39 +1,37 @@
 (function(document) {
-	'use strict';
- 
-	var TableFilter = (function(Arr) {
- 
-		var _input;
- 
-		function _onInputEvent(e) {
-		_input = e.target;
-		var tables = document.getElementsByClassName(_input.getAttribute('data-table'));
-		Arr.forEach.call(tables, function(table) {
-		Arr.forEach.call(table.tBodies, function(tbody) {
-		Arr.forEach.call(tbody.rows, _filter);
-		});
-		});
-		}
- 
-		function _filter(row) {
-		var text = row.textContent.toLowerCase(), val = _input.value.toLowerCase();
-		row.style.display = text.indexOf(val) === -1 ? 'none' : 'table-row';
-		}
- 
-		return {
-		init: function() {
-		var inputs = document.getElementsByClassName('light-table-filter');
-		Arr.forEach.call(inputs, function(input) {
-		input.oninput = _onInputEvent;
-		});
-		}
-		};
-	})(Array.prototype);
- 
-	document.addEventListener('readystatechange', function() {
-		if (document.readyState === 'complete') {
-		TableFilter.init();
-		}
-	});
- 
+    'use strict';
+
+    var TableFilter = (function(myArray) {
+        var search_input;
+
+        function _onInputSearch(e) {
+            search_input = e.target;
+            var tables = document.getElementsByClassName(search_input.getAttribute('data-table'));
+            myArray.forEach.call(tables, function(table) {
+                myArray.forEach.call(table.tBodies, function(tbody) {
+                    myArray.forEach.call(tbody.rows, function(row) {
+                        var text_content = row.textContent.toLowerCase();
+                        var search_val = search_input.value.toLowerCase();
+                        row.style.display = text_content.indexOf(search_val) > -1 ? '' : 'none';
+                    });
+                });
+            });
+        }
+
+        return {
+            init: function() {
+                var inputs = document.getElementsByClassName('search-input');
+                myArray.forEach.call(inputs, function(input) {
+                    input.oninput = _onInputSearch;
+                });
+            }
+        };
+    })(Array.prototype);
+
+    document.addEventListener('readystatechange', function() {
+        if (document.readyState === 'complete') {
+            TableFilter.init();
+        }
+    });
+
 })(document);
