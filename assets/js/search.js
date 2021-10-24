@@ -1,18 +1,39 @@
-function myFunction() {
-    var input, filter, table, tr, td, i, txtValue;
-    input = document.getElementById("myInput");
-    filter = input.value.toUpperCase();
-    table = document.querySelector("table");
-    tr = table.getElementsByTagName("tr");
-    for (i = 0; i < tr.length; i++) {
-      td = tr[i].getElementsByTagName("td")[0];
-      if (td) {
-        txtValue = td.textContent || td.innerText;
-        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-          tr[i].style.display = "";
-        } else {
-          tr[i].style.display = "none";
-        }
-      }       
-    }
-  }
+(function(document) {
+	'use strict';
+ 
+	var TableFilter = (function(Arr) {
+ 
+		var _input;
+ 
+		function _onInputEvent(e) {
+		_input = e.target;
+		var tables = document.getElementsByClassName(_input.getAttribute('data-table'));
+		Arr.forEach.call(tables, function(table) {
+		Arr.forEach.call(table.tBodies, function(tbody) {
+		Arr.forEach.call(tbody.rows, _filter);
+		});
+		});
+		}
+ 
+		function _filter(row) {
+		var text = row.textContent.toLowerCase(), val = _input.value.toLowerCase();
+		row.style.display = text.indexOf(val) === -1 ? 'none' : 'table-row';
+		}
+ 
+		return {
+		init: function() {
+		var inputs = document.getElementsByClassName('light-table-filter');
+		Arr.forEach.call(inputs, function(input) {
+		input.oninput = _onInputEvent;
+		});
+		}
+		};
+	})(Array.prototype);
+ 
+	document.addEventListener('readystatechange', function() {
+		if (document.readyState === 'complete') {
+		TableFilter.init();
+		}
+	});
+ 
+})(document);
