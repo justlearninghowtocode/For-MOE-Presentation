@@ -78,7 +78,7 @@ a {
 }
 
 #site-main{
-    margin-top: 6em;
+    margin-top: 85px;
     margin-top: 2em;
     font-family: 'Barlow', sans-serif;
 }
@@ -94,11 +94,15 @@ a {
 
 table{
     border-spacing: 0px;
+    position: center; 
     width: 100%;
+    
+    
 }
 
+
 .table td, .table th{
-    padding: .15em;
+    padding: .1em;
     width: 100%;
     vertical-align: top;
     text-align: center;
@@ -159,6 +163,24 @@ table{
 		padding-right: 10px; 
 		white-space: nowrap;
 	}
+
+    /*
+	Label the data
+	*/
+	td:nth-of-type(1):before { content: "id"; }
+	td:nth-of-type(2):before { content: "name"; }
+	td:nth-of-type(3):before { content: "ic_number"; }
+	td:nth-of-type(4):before { content: "ic_colour"; }
+	td:nth-of-type(5):before { content: "gender"; }
+	td:nth-of-type(6):before { content: "nationality"; }
+	td:nth-of-type(7):before { content: "date_of_birth"; }
+	td:nth-of-type(8):before { content: "grade"; }
+	td:nth-of-type(9):before { content: "educational_institution"; }
+	td:nth-of-type(10):before { content: "question_1"; }
+	td:nth-of-type(11):before { content: "question_2"; }
+	td:nth-of-type(12):before { content: "question_3"; }
+	td:nth-of-type(13):before { content: "edit"; }
+	td:nth-of-type(14):before { content: "delete"; }
 
 }
 
