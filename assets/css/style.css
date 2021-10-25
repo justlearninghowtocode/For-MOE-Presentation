@@ -295,7 +295,7 @@ button {
 input {
     width: 200px;
     border-radius: 5px;
-    text-align: center;
+    text-align: left;
     border: 1px solid #212121;
     height: 40px;
 }
